@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nassira Sennoune - Link Builder & SEO Specialist. Acquisition de backlinks haute autorite dans le tourisme, retail et vapes.">
+    <meta name="author" content="Nassira Sennoune">
+    <title>Nassira Sennoune | Link Builder & SEO Specialist</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, Helvetica, sans-serif; color: #222; line-height: 1.6; background: #fff; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: #2c3e50; z-index: 1000; padding: 0 2rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+        .nav-container {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; height: 60px;
+        }
+        .nav-logo { font-size: 1.2rem; font-weight: bold; color: #fff; letter-spacing: 0.5px; }
+        .nav-links { display: flex; list-style: none; gap: 1.8rem; }
+        .nav-links a {
+            color: #ccc; font-size: 0.85rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fff; }
+        .nav-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .nav-toggle span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: #fff; padding: 100px 2rem 60px;
+        }
+        .hero-content { max-width: 700px; }
+
+        .profile-photo {
+            width: 150px; height: 150px; border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.6); margin: 0 auto 1.5rem;
+            object-fit: cover;
+        }
+
+        .hero h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+        .hero .subtitle { font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; opacity: 0.95; }
+        .hero .location { font-size: 0.95rem; opacity: 0.85; margin-bottom: 0.2rem; }
+        .hero .experience { font-size: 0.9rem; opacity: 0.8; margin-bottom: 0.8rem; }
+        .hero .specialties {
+            display: inline-block; background: rgba(255,255,255,0.12);
+            padding: 0.4rem 1.2rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 2rem;
+        }
+
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-size: 2rem; font-weight: 800; display: block; }
+        .hero-stat .lbl { font-size: 0.8rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block; padding: 0.75rem 1.8rem; border-radius: 4px;
+            font-size: 0.9rem; font-weight: 600; transition: opacity 0.2s; border: none;
+        }
+        .btn-primary { background: #fff; color: #2c3e50; }
+        .btn-primary:hover { opacity: 0.9; }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid #fff; }
+        .btn-outline:hover { background: #fff; color: #2c3e50; }
+
+        /* SECTIONS */
+        .section { padding: 4.5rem 2rem; }
+        .section-white { background: #fff; }
+        .section-gray { background: #f5f5f5; }
+        .section-dark { background: #2c3e50; color: #fff; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 {
+            font-size: 1.8rem; font-weight: 800; color: #2c3e50;
+            margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .section-dark .section-header h2 { color: #fff; }
+        .section-header .bar { width: 60px; height: 3px; background: #2c3e50; margin: 0 auto 0.8rem; }
+        .section-dark .section-header .bar { background: #fff; }
+        .section-header p { font-size: 0.95rem; color: #666; max-width: 550px; margin: 0 auto; }
+        .section-dark .section-header p { color: #aaa; }
+
+        /* FEATURED IN */
+        .featured-logos {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            align-items: center; gap: 2.5rem;
+        }
+        .featured-logo {
+            text-align: center; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .featured-logo:hover { opacity: 1; }
+        .featured-logo img {
+            height: 32px; width: auto; margin: 0 auto 0.4rem;
+            filter: grayscale(100%); transition: filter 0.2s;
+        }
+        .featured-logo:hover img { filter: grayscale(0%); }
+        .featured-logo span { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* RESULTS GRID */
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+        .result-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+            padding: 1.8rem 1.2rem; text-align: center; transition: box-shadow 0.2s;
+        }
+        .result-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+        .result-card h3 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 0.3rem; font-weight: 800; }
+        .result-card h4 { font-size: 0.9rem; color: #333; margin-bottom: 0.4rem; font-weight: 700; }
+        .result-card p { font-size: 0.82rem; color: #666; line-height: 1.5; }
+
+        /* CASE STUDIES */
+        .case-study {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+            overflow: hidden; margin-bottom: 2rem; transition: box-shadow 0.2s;
+        }
+        .case-study:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+        .case-study-img { border-bottom: 1px solid #e0e0e0; }
+        .case-study-img img { width: 100%; display: block; }
+        .case-study-body { padding: 1.8rem; }
+        .case-study-tag {
+            display: inline-block; background: #2c3e50; color: #fff;
+            padding: 0.2rem 0.8rem; border-radius: 3px; font-size: 0.75rem;
+            font-weight: 600; text-transform: uppercase; margin-bottom: 0.8rem;
+        }
+        .case-study-body h3 { font-size: 1.25rem; color: #2c3e50; margin-bottom: 0.6rem; }
+        .case-study-body p { color: #555; margin-bottom: 1.2rem; font-size: 0.9rem; line-height: 1.7; }
+
+        .metrics { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .metric {
+            flex: 1; min-width: 90px; text-align: center; padding: 0.8rem;
+            background: #f5f5f5; border-radius: 4px;
+        }
+        .metric-val { font-size: 1.15rem; font-weight: 800; color: #2c3e50; display: block; }
+        .metric-lbl { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.3px; }
+
+        /* SKILLS */
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .skill-box {
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
+            padding: 1.5rem; transition: background 0.2s;
+        }
+        .skill-box:hover { background: rgba(255,255,255,0.05); }
+        .skill-box h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.8rem; font-weight: 700; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .skill-tag {
+            background: rgba(255,255,255,0.1); color: #ccc;
+            padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.78rem; font-weight: 600;
+        }
+
+        /* TOOLS */
+        .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+        .tool-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+            padding: 1.2rem; text-align: center; transition: box-shadow 0.2s;
+        }
+        .tool-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .tool-logo {
+            width: 44px; height: 44px; margin: 0 auto 0.6rem;
+            background: #f0f0f0; border-radius: 6px; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .tool-logo img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+        .tool-card h4 { font-size: 0.82rem; color: #2c3e50; font-weight: 700; }
+        .tool-card p { font-size: 0.72rem; color: #888; margin-top: 0.2rem; }
+
+        /* CTA */
+        .cta {
+            background: #2c3e50; text-align: center; padding: 4rem 2rem; color: #fff;
+        }
+        .cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.8rem; }
+        .cta p { font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-cta {
+            padding: 0.8rem 2rem; border-radius: 4px; font-size: 0.95rem;
+            font-weight: 700; cursor: pointer; transition: opacity 0.2s; border: none;
+        }
+        .btn-cta-white { background: #fff; color: #2c3e50; }
+        .btn-cta-white:hover { opacity: 0.9; }
+        .btn-cta-outline { background: transparent; color: #fff; border: 2px solid #fff; }
+        .btn-cta-outline:hover { background: #fff; color: #2c3e50; }
+
+        /* FOOTER */
+        footer { background: #222; color: #aaa; padding: 2.5rem 2rem 1.2rem; }
+        .footer-inner {
+            max-width: 1100px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; flex-wrap: wrap;
+            gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #333;
+        }
+        .footer-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .footer-info p { font-size: 0.85rem; }
+        .social-links { display: flex; gap: 0.8rem; }
+        .social-link {
+            width: 38px; height: 38px; border-radius: 50%;
+            background: #333; display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s; font-size: 0.85rem; color: #aaa; font-weight: 700;
+        }
+        .social-link:hover { background: #2c3e50; color: #fff; }
+        .footer-bottom { max-width: 1100px; margin: 1rem auto 0; text-align: center; font-size: 0.8rem; color: #666; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-grid { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero h1 { font-size: 2.2rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: absolute; top: 60px; left: 0; width: 100%;
+                background: #2c3e50; flex-direction: column; padding: 1rem 2rem; gap: 0.8rem;
+            }
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
+            .hero h1 { font-size: 1.8rem; }
+            .results-grid { grid-template-columns: 1fr; }
+            .metrics { flex-direction: column; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .featured-logos { gap: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.5rem; }
+            .hero-stats { flex-direction: column; gap: 0.8rem; }
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">NASSIRA SEO</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#featured">Publications</a></li>
+                <li><a href="#resultats">Resultats</a></li>
+                <li><a href="#etudes">Etudes de Cas</a></li>
+                <li><a href="#competences">Competences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <img src="nassira/Profile.jpg" alt="Nassira Sennoune" class="profile-photo">
+
+            <h1>NASSIRA SENNOUNE</h1>
+            <p class="subtitle">Link Builder & SEO Specialist</p>
+            <p class="location">Maroc</p>
+            <p class="experience">1 an et demi d'experience</p>
+            <div class="specialties">Link Building | Outreach | SEO On-Page & Technique</div>
+
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="num">300+</span><span class="lbl">Liens Acquis</span></div>
+                <div class="hero-stat"><span class="num">DA 90+</span><span class="lbl">Sites Cibles</span></div>
+                <div class="hero-stat"><span class="num">20+</span><span class="lbl">Clients</span></div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Contactez-Moi</a>
+                <a href="#" class="btn btn-outline">Telecharger CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED IN / PUBLICATIONS -->
+    <section class="section section-white" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2>Liens Acquis Sur</h2>
+                <div class="bar"></div>
+                <p>Backlinks places sur des sites a haute autorite</p>
+            </div>
+            <div class="featured-logos">
+                <div class="featured-logo">
+                    <img src="nassira/Logos/forbes.png" alt="Forbes">
+                    <span>Forbes</span>
+                </div>
+                <div class="featured-logo">
+                    <img src="nassira/Logos/daily-mail.png" alt="Daily Mail">
+                    <span>Daily Mail</span>
+                </div>
+                <div class="featured-logo">
+                    <img src="nassira/Logos/featured.png" alt="Featured">
+                    <span>Featured</span>
+                </div>
+                <div class="featured-logo">
+                    <img src="nassira/Logos/business-insider.png" alt="Business Insider">
+                    <span>Business Insider</span>
+                </div>
+                <div class="featured-logo">
+                    <img src="nassira/Logos/entrepreneur.png" alt="Entrepreneur">
+                    <span>Entrepreneur</span>
+                </div>
+                <div class="featured-logo">
+                    <img src="nassira/Logos/yahoo-news.png" alt="Yahoo News">
+                    <span>Yahoo News</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTATS -->
+    <section class="section section-gray" id="resultats">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultats Mesurables</h2>
+                <div class="bar"></div>
+                <p>Des performances concretes en acquisition de liens</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>300+</h3>
+                    <h4>Backlinks Acquis</h4>
+                    <p>Liens de haute qualite places sur des sites a forte autorite</p>
+                </div>
+                <div class="result-card">
+                    <h3>DA 90+</h3>
+                    <h4>Sites Premium</h4>
+                    <p>Forbes, Daily Mail, Business Insider et autres publications</p>
+                </div>
+                <div class="result-card">
+                    <h3>+120%</h3>
+                    <h4>Domain Rating</h4>
+                    <p>Augmentation moyenne du DR des sites clients</p>
+                </div>
+                <div class="result-card">
+                    <h3>80%</h3>
+                    <h4>Taux de Reponse</h4>
+                    <p>Taux de reponse positive aux campagnes d'outreach</p>
+                </div>
+                <div class="result-card">
+                    <h3>20+</h3>
+                    <h4>Clients</h4>
+                    <p>Clients dans le tourisme, retail et vapes</p>
+                </div>
+                <div class="result-card">
+                    <h3>Top 10</h3>
+                    <h4>Positionnement</h4>
+                    <p>Amelioration des classements grace aux backlinks cibles</p>
+                </div>
+                <div class="result-card">
+                    <h3>100%</h3>
+                    <h4>White Hat</h4>
+                    <p>Liens naturels et conformes aux guidelines Google</p>
+                </div>
+                <div class="result-card">
+                    <h3>3</h3>
+                    <h4>Niches</h4>
+                    <p>Tourisme, Retail et Vapes</p>
+                </div>
+                <div class="result-card">
+                    <h3>+100%</h3>
+                    <h4>Trafic Organique</h4>
+                    <p>Croissance moyenne du trafic organique des clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ETUDES DE CAS -->
+    <section class="section section-white" id="etudes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Etudes de Cas</h2>
+                <div class="bar"></div>
+                <p>Des campagnes de link building avec des resultats concrets</p>
+            </div>
+
+            <!-- 1. Tourisme -->
+            <div class="case-study">
+                <div class="case-study-img"><img src="nassira/case-tourisme.jpg" alt="Etude de cas Tourisme"></div>
+                <div class="case-study-body">
+                    <span class="case-study-tag">Tourisme</span>
+                    <h3>Link Building Secteur Tourisme</h3>
+                    <p>Campagne d'acquisition de liens pour des acteurs du tourisme. Guest posting sur des blogs voyage et lifestyle, outreach vers des sites d'autorite dans le secteur travel pour renforcer la visibilite organique.</p>
+                    <div class="metrics">
+                        <div class="metric"><span class="metric-val">60+</span><span class="metric-lbl">Liens Acquis</span></div>
+                        <div class="metric"><span class="metric-val">DA 50+</span><span class="metric-lbl">Moyenne</span></div>
+                        <div class="metric"><span class="metric-val">+100%</span><span class="metric-lbl">Trafic</span></div>
+                        <div class="metric"><span class="metric-val">5 mois</span><span class="metric-lbl">Duree</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Retail -->
+            <div class="case-study">
+                <div class="case-study-img"><img src="nassira/case-retail.jpg" alt="Etude de cas Retail"></div>
+                <div class="case-study-body">
+                    <span class="case-study-tag">Retail</span>
+                    <h3>Backlinks pour E-commerce Retail</h3>
+                    <p>Strategie de link building pour des sites e-commerce retail. Acquisition de liens via des guides d'achat, des comparatifs produits et des placements editoriaux sur des sites shopping et lifestyle.</p>
+                    <div class="metrics">
+                        <div class="metric"><span class="metric-val">80+</span><span class="metric-lbl">Liens Acquis</span></div>
+                        <div class="metric"><span class="metric-val">+90%</span><span class="metric-lbl">DR</span></div>
+                        <div class="metric"><span class="metric-val">Top 10</span><span class="metric-lbl">Position</span></div>
+                        <div class="metric"><span class="metric-val">6 mois</span><span class="metric-lbl">Duree</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Vapes -->
+            <div class="case-study">
+                <div class="case-study-img"><img src="nassira/case-vapes.jpg" alt="Etude de cas Vapes"></div>
+                <div class="case-study-body">
+                    <span class="case-study-tag">Vapes</span>
+                    <h3>Link Building Niche Vapes</h3>
+                    <p>Acquisition de backlinks dans la niche vapes, un secteur difficile avec des restrictions publicitaires. Outreach cible vers des blogs specialises et des sites d'avis pour construire l'autorite de domaine.</p>
+                    <div class="metrics">
+                        <div class="metric"><span class="metric-val">40+</span><span class="metric-lbl">Liens Acquis</span></div>
+                        <div class="metric"><span class="metric-val">DA 40+</span><span class="metric-lbl">Moyenne</span></div>
+                        <div class="metric"><span class="metric-val">+80%</span><span class="metric-lbl">Trafic</span></div>
+                        <div class="metric"><span class="metric-val">4 mois</span><span class="metric-lbl">Duree</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section class="section section-dark" id="competences">
+        <div class="container">
+            <div class="section-header">
+                <h2>Competences</h2>
+                <div class="bar"></div>
+                <p>Specialisee en acquisition de liens et optimisation SEO</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>Link Building</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Guest Posting</span>
+                        <span class="skill-tag">Digital PR</span>
+                        <span class="skill-tag">Outreach</span>
+                        <span class="skill-tag">Resource Pages</span>
+                        <span class="skill-tag">Broken Link Building</span>
+                        <span class="skill-tag">HARO</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <h3>SEO On-Page</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Keyword Research</span>
+                        <span class="skill-tag">Optimisation Contenu</span>
+                        <span class="skill-tag">Maillage Interne</span>
+                        <span class="skill-tag">Meta Tags</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <h3>SEO Technique</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Audit Technique</span>
+                        <span class="skill-tag">Core Web Vitals</span>
+                        <span class="skill-tag">Crawlabilite</span>
+                        <span class="skill-tag">Schema Markup</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <h3>Analyse & Reporting</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Analyse Backlinks</span>
+                        <span class="skill-tag">Profil de Liens</span>
+                        <span class="skill-tag">Reporting KPI</span>
+                        <span class="skill-tag">Analyse Concurrence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUTILS -->
+    <section class="section section-white" id="outils">
+        <div class="container">
+            <div class="section-header">
+                <h2>Outils & Technologies</h2>
+                <div class="bar"></div>
+                <p>Les outils essentiels pour le link building et le SEO</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/ahrefs.png" alt="Ahrefs"></div><h4>Ahrefs</h4><p>Backlinks & DR</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/semrush.png" alt="SEMrush"></div><h4>SEMrush</h4><p>Analyse & Audit</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/haro.png" alt="HARO"></div><h4>HARO</h4><p>Link Building</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/qwoted.png" alt="Qwoted"></div><h4>Qwoted</h4><p>Media Outreach</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/press-ranger.png" alt="Press Ranger"></div><h4>Press Ranger</h4><p>Digital PR</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/google-analytics.png" alt="Google Analytics"></div><h4>Google Analytics</h4><p>Tracking & Data</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/search-console.png" alt="Search Console"></div><h4>Search Console</h4><p>Performance SEO</p></div>
+                <div class="tool-card"><div class="tool-logo"><img src="nassira/Logos/screaming-frog.png" alt="Screaming Frog"></div><h4>Screaming Frog</h4><p>Crawl & Audit</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <h2>Besoin de Backlinks de Haute Autorite ?</h2>
+        <p>Discutons de votre projet et construisons ensemble un profil de liens solide qui booste votre autorite et vos classements.</p>
+        <div class="cta-buttons">
+            <a href="mailto:contact@example.com" class="btn-cta btn-cta-white">Contactez-Moi</a>
+            <a href="#" class="btn-cta btn-cta-outline">Telecharger CV</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-info">
+                <h3>NASSIRA SENNOUNE</h3>
+                <p>Link Builder & SEO Specialist - Maroc</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link" title="LinkedIn">in</a>
+                <a href="#" class="social-link" title="Twitter">X</a>
+                <a href="#" class="social-link" title="Facebook">fb</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Nassira Sennoune. Tous droits reserves.</p></div>
+    </footer>
+
+</body>
+</html>
